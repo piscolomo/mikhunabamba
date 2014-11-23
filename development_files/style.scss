@@ -3,5 +3,43 @@
 
 $color : red;
 body{
-	background: $color;
+	background: url(../images/bg.jpg) no-repeat;
+}
+
+main{
+  @include outer-container;
+}
+
+header{
+  .logo{
+    @include span-columns(3);
+  }
+  nav{
+    @include span-columns(9);
+    @include omega();
+    ul{
+      li{
+        display: inline;
+        margin: 0 10px;
+        a{
+          color: #fff;
+          cursor: pointer;
+          text-transform: uppercase;
+          text-shadow: 1px 1px 1px #000;
+        }
+      }
+    }
+  }
+  h1,h2{
+    text-align: center;
+    color: #fff;
+    @include fill-parent();
+  }
+  h1{
+    @include row(table);
+    font-size: 24px;
+  }
+  h2{
+    font-size: 18px;   
+  }
 }
