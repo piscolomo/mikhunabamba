@@ -1,9 +1,12 @@
 @import "../bower_components/bourbon/dist/bourbon";
 @import "../bower_components/neat/app/assets/stylesheets/neat";
 
-$color : red;
+$plomo : #8A8A8A;
+$naranja : #FB5E00;
+$azul: #4DA1E9;
+
 body{
-	background: url(../images/bg.jpg) no-repeat;
+	background: url(../images/bg.jpg) no-repeat #F2F2F2;
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -55,8 +58,52 @@ header{
       @include span-columns(6);
     }
     button{
-      @include button;
+      @include button($naranja);
+    }
+  }
+}
 
+#restaurantes{
+  @include outer-container;
+  h2{
+    color: $plomo;
+    font-size: 1.2em;
+  }
+  > div{
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    @include span-columns(3);
+    @include omega(4n);
+    @include pad();
+    img{
+      display: block;
+      margin: 0 auto;
+      width:50%;
+    }
+    h3{
+      text-align: center;
+    }
+    span{
+      text-align: center;
+      display: block;
+      &.minimo{
+        color: $naranja;
+        font-size: 1.2em;
+        font-weight: 700;
+      }
+      &.tenvio{ 
+        color: $plomo;
+        font-size: 0.8em;
+      }
+    }
+    button{
+      @include button($naranja);
+      @include fill-parent();
+      margin-top: 12px;
+      &:hover{
+        @include button($azul);
+      }
     }
   }
 }
