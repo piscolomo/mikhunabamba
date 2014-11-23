@@ -10,17 +10,7 @@ html(lang="en")
     script(src="http://localhost:35729/livereload.js")
   body
     - var links = ["Inicio", "Blog", "Contactanos", "Descargar app","Donaciones"]
-    
-    header
-      img.logo(src="images/logo.png")
-      nav
-        ul
-          each val in links
-            li
-              a= val
-      h1 ENCUENTRA TODA LA INFORMACIÓN DE LOS RESTAURANTES DE TU CIUDAD
-      h2 Y ÚSALA PARA PEDIR DELIVERY, RESERVAR, PEDIR PARA RECOJO O IR AL LOCAL.
-    
+    include includes/head.jade
     #search
       div
         select
@@ -57,20 +47,4 @@ html(lang="en")
             each val in links
               li
                 a= val
-    footer
-      div
-        h3 MIKHUNA
-        p  Copyright Mikhunabamba
-        ul#iconos
-          li
-            i.fa.fa-facebook-square
-          li
-            i.fa.fa-twitter-square
-          li
-            i.fa.fa-youtube-play
-          li
-            i.fa.fa-pinterest-square
-          li
-            i.fa.fa-tumblr-square
-          li
-            i.fa.fa-google-plus-square
+    include includes/footer.jade
