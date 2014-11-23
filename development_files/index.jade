@@ -1,22 +1,25 @@
 doctype html
 html(lang="en")
   head
-    title Grunt Project Ready
+    title Mikhunabamba
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     link(rel="stylesheet" href="bower_components/normalize.css/normalize.css")
     link(rel="stylesheet" href="css/style.css")
     script(type='text/javascript' src="js/script.min.js")
     script(src="http://localhost:35729/livereload.js")
   body
+    - var links = ["Inicio", "Blog", "Contactanos", "Descargar app","Donaciones"]
+    
     header
       img.logo(src="images/logo.png")
       nav
         ul
-          each val in ["Inicio", "Blog", "Contactanos", "Descargar app","Donaciones"]
+          each val in links
             li
               a= val
       h1 ENCUENTRA TODA LA INFORMACIÓN DE LOS RESTAURANTES DE TU CIUDAD
       h2 Y ÚSALA PARA PEDIR DELIVERY, RESERVAR, PEDIR PARA RECOJO O IR AL LOCAL.
+    
     #search
       div
         select
@@ -25,6 +28,7 @@ html(lang="en")
           option Parrillas
         input(placeholder="Buscar por nombre de restaurante")
         button Buscar
+    
     section#restaurantes
       h2 RESTAURANTES POPULARES
       - for (var x = 0; x < 4; x++)
@@ -34,3 +38,21 @@ html(lang="en")
           span.minimo MÍNIMO S/. 0
           span.tenvio Tiempo Envío: 15-20 min.
           button VER INFO
+    
+    section#links
+      div
+        div
+          h3 Donde estamos
+          ul
+            -for (var x = 0; x < 6; x++)
+              li
+                a Restaurantes en Piura
+        div
+          h3 Contáctanos
+          p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, omnis, voluptates iusto nemo repudiandae, perspiciatis nihil, eveniet inventore unde est voluptas saepe obcaecati officia fugiat tempore. Cupiditate, ratione. Deleniti, soluta!
+        div
+          h3 Menu
+          ul
+            each val in links
+              li
+                a= val
