@@ -5,6 +5,8 @@ $plomo : #8A8A8A;
 $naranja : #FB5E00;
 $azul: #4DA1E9;
 
+$mobile: new-breakpoint(max-width 500px);
+
 body{
 	background: url(../images/bg.jpg) no-repeat #F2F2F2;
   font-family: 'Ubuntu', sans-serif;
@@ -51,14 +53,21 @@ header{
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   > div{
     @include outer-container;
+    @include media($mobile){padding:20px;}
     select, button{
       @include span-columns(2);
     }
     input{
-      @include span-columns(6);
+      @include span-columns(5.5);
     }
     button{
       @include button($naranja);
+    }
+    select, input, button{
+      @include media($mobile){
+        @include row(table);
+        margin: 20px 0;
+      }
     }
   }
 }
@@ -76,6 +85,10 @@ header{
     @include span-columns(3);
     @include omega(4n);
     @include pad();
+    @include media($mobile) {
+      @include row(table);
+      padding: 30px;
+    }
     img{
       display: block;
       margin: 0 auto;
