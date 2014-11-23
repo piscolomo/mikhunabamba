@@ -7,11 +7,8 @@ body{
   font-family: 'Ubuntu', sans-serif;
 }
 
-main{
-  @include outer-container;
-}
-
 header{
+  @include outer-container;
   .logo{
     @include span-columns(3);
   }
@@ -42,5 +39,24 @@ header{
   }
   h2{
     font-size: 18px;   
+  }
+}
+
+#search{
+  padding: 30px 0;
+  background: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  > div{
+    @include outer-container;
+    select, button{
+      @include span-columns(2);
+    }
+    input{
+      @include span-columns(6);
+    }
+    button{
+      @include button;
+
+    }
   }
 }

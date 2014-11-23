@@ -8,13 +8,20 @@ html(lang="en")
     script(type='text/javascript' src="js/script.min.js")
     script(src="http://localhost:35729/livereload.js")
   body
-    main
-      header
-        img.logo(src="images/logo.png")
-        nav
-          ul
-            each val in ["Inicio", "Blog", "Contactanos", "Descargar app","Donaciones"]
-              li
-                a= val
-        h1 ENCUENTRA TODA LA INFORMACIÓN DE LOS RESTAURANTES DE TU CIUDAD
-        h2 Y ÚSALA PARA PEDIR DELIVERY, RESERVAR, PEDIR PARA RECOJO O IR AL LOCAL.
+    header
+      img.logo(src="images/logo.png")
+      nav
+        ul
+          each val in ["Inicio", "Blog", "Contactanos", "Descargar app","Donaciones"]
+            li
+              a= val
+      h1 ENCUENTRA TODA LA INFORMACIÓN DE LOS RESTAURANTES DE TU CIUDAD
+      h2 Y ÚSALA PARA PEDIR DELIVERY, RESERVAR, PEDIR PARA RECOJO O IR AL LOCAL.
+    #search
+      div
+        select
+          option Piura
+        select
+          option Parrillas
+        input(placeholder="Buscar por nombre de restaurante")
+        button Buscar
