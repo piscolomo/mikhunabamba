@@ -157,3 +157,28 @@ header{
     }
   }
 }
+
+footer{
+  background: #2A2A2A;
+  color: #fff;
+  width: 100% !important;
+  > div{
+    @include outer-container;
+    @include pad();
+    h3,p{
+      @include media($mobile){display: none !important;}
+    }
+    h3,p,#iconos{
+      @include span-columns(4);
+    }
+    #iconos{
+      padding-left: 0;
+      @include media($mobile){@include row(table);text-align:center;}
+      li{
+        display: inline;
+        font-size: 2em;
+        margin: 0 8px;
+      }
+    }
+  }
+}
