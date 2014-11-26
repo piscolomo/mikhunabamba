@@ -16,11 +16,28 @@ header{
   @include outer-container;
   .logo{
     @include span-columns(3);
+    @include pad();
+    @include media($mobile){
+      @include span-columns(6);
+      @include shift(3);
+    }
+  }
+  select{
+    display: none;
+    @include media($mobile){
+      display: block;
+      @include span-columns(10);
+      @include shift(1);
+    }
   }
   nav{
     @include span-columns(9);
     @include omega();
+    @include media($mobile){
+      display: none;
+    }
     ul{
+      margin-top: 50px;
       li{
         display: inline;
         margin: 0 10px;
@@ -28,6 +45,8 @@ header{
           color: #fff;
           cursor: pointer;
           text-transform: uppercase;
+          text-size: 0.3em;
+          font-weight: 400;
           text-shadow: 1px 1px 1px #000;
         }
       }
@@ -36,14 +55,18 @@ header{
   h1,h2{
     text-align: center;
     color: #fff;
+    
     @include fill-parent();
   }
   h1{
     @include row(table);
-    font-size: 24px;
+    text-shadow: 1px 2px 2px #000;
+    font-size: 1.3em;
+    font-weight: 400;
   }
   h2{
-    font-size: 18px;   
+    font-size: 1em;   
+    font-weight: 400;
   }
 }
 
